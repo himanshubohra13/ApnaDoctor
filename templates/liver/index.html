@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Liver-form</title>
+    <link rel="stylesheet" href="liver.css" />
+    <script src="liver.js"></script>
+  </head>
+  <body>
+    <h1>Liver Form</h1>
+    <table>
+      <form id="myForm">
+        <tr class="row">
+          <td>
+            <label for="patient-id" class="title">Patient-id:</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="patient-id"
+              name="patient-id"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="age" class="title">Age:</label>
+          </td>
+          <td><input type="number" class="ip" id="age" name="age" /><br /></td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="gender" class="title">Gender: </label>
+          </td>
+          <td>
+            <select name="gender" id="gender" class="ip">
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="Other">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="tsb" class="title">Total Bilirubin: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="tsb"
+              name="tsb"
+              placeholder="milligrams per deciliter(mg/dL)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="db" class="title">Direct Bilirubin: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="db"
+              name="db"
+              placeholder="milligrams per deciliter(mg/dL)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="alp" class="title">Alkaline Phosphatase: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="alp"
+              name="alp"
+              placeholder="units per liter(U/L)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="alt" class="title">Alanine Aminotransferase: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="alt"
+              name="alt"
+              placeholder="units per liter(U/L)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="ast" class="title">AspartateAminotransferase: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="ast"
+              name="ast"
+              placeholder="units per liter(U/L)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="tp" class="title">Total Proteins: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="tp"
+              name="tp"
+              placeholder="grams per deciliter(g/dL)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="alb" class="title">Albumin: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="ip"
+              id="alb"
+              name="alb"
+              placeholder="grams per deciliter(g/dL)"
+            /><br />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label for="agr" class="title">Albumin and Globulin Ratio: </label>
+          </td>
+          <td><input type="number" class="ip" id="agr" name="agr" /><br /></td>
+        </tr>
+      </form>
+    </table>
+    <input
+      type="button"
+      class="butn"
+      form=""
+      value="Submit"
+      onClick="submit()"
+    />
+    <input type="button" class="butn" value="Reset" onClick="fun()" />
+    <!--button type="button" class="btn btn-light" value="Submit">Submit</button-->
+  </body>
+  <script>
+    function fun() {
+      document.getElementById("myForm").reset();
+    }
+
+    function submit() {
+      document.getElementById("myForm").submit();
+    }
+  </script>
+</html>
