@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <link rel="stylesheet" href="{% static 'stroke/style.css' %}">
+</head>
+<body background="{% static 'stroke/img6.jpg' %}">
+    <div class="container">
+
+        <form action="{% url 'stroke-predict' %}" method="post" >
+            {% csrf_token %}
+
+            <div class="heading">
+                <h2>Stroke Prediction</h2>
+            </div>
+
+            <div class="box">
+                <label for="">Gender</label>
+                <select name="gender" id="select">
+                    <option value=""> --Select gender-- </option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                    <option value="2">Other</option>
+                </select>
+            </div>
+
+            <div class="box">
+                <label for="">Age</label>
+                <input name="age" value="" class="age" id="input" type="number" placeholder="Year">
+            </div>
+
+            <div class="box">
+                <label for="">Hypertension</label>
+                <input name="hypertension" value="" class="hyper" id="input" type="text" placeholder="0 or 1">
+            </div>
+            <div class="box">
+                <label for="">Heart Disease</label>
+                <input name="heart" class="heart" id="input" type="text" placeholder="0 or 1">
+            </div>
+            <div class="box">
+                <label for="">Ever Married</label>
+                <select name="marriage" name="" id="select">
+                    <option value=""> --Select-- </option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="">Work Type</label>
+                <select name="work" id="select">
+                    <option value="">--Select--</option>
+                    <option value="2">Private</option>
+                    <option value="3">Self-employed</option>
+                    <option value="0">Govt Job</option>
+                    <option value="4">Children</option>
+                    <option value="1">Never Worked</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="">Residence Type</label>
+                <select name="residence_type" id="select">
+                    <option value=""> --Select-- </option>
+                    <option value="1">Urban</option>
+                    <option value="0">Rural</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="">Avg Glucose Level</label>
+                <input name="glucose" value="" class="glucose" type="text" id="input" placeholder="glucose level in body">
+            </div>
+            <div class="box">
+                <label for="">BMI</label>
+                <input name="bmi" value="" class="bmi"  id="input" type="number" placeholder="body mass index">
+            </div>
+            <div class="box">
+                <label for="">Smoking Status</label>
+                <select name="smoking" id="select">
+                    <option  value=""> --Select--</option>
+                    <option  value="1">Formely Smoked</option>
+                    <option  value="2">Never Smoked</option>
+                    <option  value="3">Smokes</option>
+                    <option  value="0">Unkown</option>
+                </select>
+            </div>
+            
+            <div class="bttn">
+                <button>Submit</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
