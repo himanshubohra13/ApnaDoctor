@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +48,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <!-- {% csrf_token %} -->
+            {% csrf_token %}
             <h5 class="modal-title" id="exampleModalLabel">
               Send Your Symptoms
             </h5>
@@ -80,7 +80,7 @@
             >
               Close
             </button>
-            <!-- {% csrf_token %} -->
+            {% csrf_token %}
             <button class="btn btn-success col-md-4 mx-1" id="sendSymptoms">
               Send Symptoms
             </button>
@@ -101,7 +101,7 @@
                 <button class="btn btn-info col-md-4 mx-1" id="addSymptoms">
                   <i class="fas fa-plus"></i> Add Symptoms
                 </button>
-                <!-- {% csrf_token %} -->
+                {% csrf_token %}
                 <button
                   type="button"
                   class="btn btn-success col-md-4 mx-1"
@@ -152,7 +152,7 @@
                   style="display: none"
                   class="col-lg-4 align-self-center text-center"
                 >
-                  <!-- {% csrf_token %} -->
+                  {% csrf_token %}
                   <button
                     class="btn btn-success w-75 mx-1 my-2 disabled"
                     id="sendButton"
@@ -200,12 +200,9 @@
       </div>
 
       <div class="row justify-content-center">
-        <a
-          class="btn btn-danger col-3 mx-1 my-3"
-          href="../video call page/videocallpage.html"
-        >
-          Book Appointment with Doctor
-        </a>
+
+        <a class="btn btn-danger col-3 mx-1 my-3" href="{% url 'register' %}"> Book Appointment with Doctor </a>
+
       </div>
     </div>
     <script
@@ -213,6 +210,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="./recorder.js"></script>
+    <script src="{% static 'soundRecorder/recorder.js' %}"></script>
   </body>
 </html>

@@ -21,89 +21,95 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <title>Covid Classifier</title>
+    <title>Alzheimer Classifier</title>
   </head>
   <body>
     <div class="container-xxl">
       <div class="row text-center">
-        <h1>Covid-19 X-Ray Classifier</h1>
+        <h1>Alzheimer MRI Classifier</h1>
       </div>
       <div class="row">
-        <div class="card col-md-3 mx-auto">
-          <div class="card-header text-center">Menu</div>
-          <div class="card-body">
-            <div class="my-3 text-center">
-              <label class="btn btn-primary w-75" for="xrayimg"
-                >Load input Image</label
-              >
-              <input
-                type="file"
-                id="xrayimg"
-                accept="image/*"
-                style="display: none"
-                onchange="showPreview(event)"
-              />
-            </div>
-            <div class="my-3 text-center">
-              {% csrf_token %}
-              <button
-                onclick="postImage()"
-                id="tclassi"
-                class="w-75 btn btn-primary disabled"
-              >
-                Classify X-Ray Image
-              </button>
-            </div>
-            <div class="my-3 row text-center">
-              <div class="col-lg-6">
-                <button class="btn btn-primary disabled" disabled>
-                  Result
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header text-center">Menu</div>
+            <div class="card-body">
+              <div class="my-3 text-center">
+                <label class="btn btn-primary w-75" for="mriimg"
+                  >Load input Image</label
+                >
+                <input
+                  type="file"
+                  id="mriimg"
+                  accept="image/*"
+                  style="display: none"
+                  onchange="showPreview(event)"
+                />
+              </div>
+              <div class="my-3 text-center">
+                {% csrf_token %}
+                <button
+                  onclick="postImage()"
+                  id="tclassi"
+                  class="w-75 btn btn-primary disabled"
+                >
+                  Classify MRI Image
                 </button>
               </div>
-              <div class="col-lg-5 pt-1">
-                <p class="Classification"></p>
+              <div class="my-3 row text-center">
+                <div class="col-lg-6">
+                  <button class="btn btn-primary disabled" disabled>
+                    Alzheimer Stage
+                  </button>
+                </div>
+                <div class="col-lg-5 pt-1">
+                  <p class="Classification"></p>
+                </div>
+              </div>
+              <div class="my-3 text-center">
+                <button class="btn w-75 btn-primary disabled">
+                  Grad-CAM Visualizer
+                </button>
+              </div>
+              <div class="my-3 text-center">
+                <button
+                  class="btn btn-danger w-75"
+                  onclick="window.location.reload()"
+                  type="reset"
+                >
+                  Reset
+                </button>
               </div>
             </div>
-            <div class="my-3 text-center">
-              <button class="btn w-75 btn-primary disabled">
-                Grad-CAM Visualizer
-              </button>
-            </div>
-            <div class="my-3 text-center">
-              <button
-                class="btn btn-danger w-75"
-                onclick="window.location.reload()"
-                type="reset"
-              >
-                Reset
-              </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto">
+            <div class="card-header text-center">Input MRI Image</div>
+            <div class="row h-100 justify-content-center align-items-center">
+              <img
+                id="imageshow"
+                src=""
+                class="align-self-center"
+                height="0px"
+                width="0px"
+                style="aspect-ratio: unset; box-sizing: content-box"
+              />
             </div>
           </div>
         </div>
-        <div class="card col-md-4 mx-auto">
-          <div class="card-header text-center">Input X-Ray Image</div>
-          <div class="row h-100 justify-content-center align-items-center">
-            <img
-              id="imageshow"
-              src=""
-              class="align-self-center"
-              height="0px"
-              width="0px"
-              style="aspect-ratio: unset; box-sizing: content-box"
-            />
-          </div>
-        </div>
-        <div class="card col-md-4 mx-auto">
-          <div class="card-header text-center">Grad-CAM Visualizer</div>
-          <div class="row h-100 justify-content-center align-items-center">
-            <img
-              id="photo"
-              src=""
-              class="align-self-center"
-              height="0px"
-              width="0px"
-              style="aspect-ratio: unset; box-sizing: content-box"
-            />
+        <div class="col-md-4">
+          <div class="card mx-auto">
+            <div class="card-header text-center">Grad-CAM Visualizer</div>
+            <div class="row h-100 justify-content-center align-items-center">
+              <img
+                id="photo"
+                src=""
+                class="align-self-center"
+                height="0px"
+                width="0px"
+                style="aspect-ratio: unset; box-sizing: content-box"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -123,8 +129,8 @@
           imageget.style.width = "0px";
           imageget.style.height = "0px";
         } else {
-          imageget.style.width = "300px";
-          imageget.style.height = "300px";
+          imageget.style.width = "176px";
+          imageget.style.height = "208px";
         }
       });
       showimg.addEventListener("load", () => {
@@ -133,8 +139,8 @@
           showimg.style.width = "0px";
           showimg.style.height = "0px";
         } else {
-          showimg.style.width = "300px";
-          showimg.style.height = "300px";
+          showimg.style.width = "176px";
+          showimg.style.height = "208px";
         }
       });
       let fileData = new FormData();
