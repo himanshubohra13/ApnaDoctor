@@ -28,7 +28,7 @@ The application mainly consists of three features:
 **Step 1. Clone the repository into a new folder and then switch to code directory**
 
 ```
-git clone https://github.com/himanshubohra13/ApnaDoctor
+git clone https://github.com/himanshubohra13/ApnaDoctor.git
 cd ApnaDoctor
 ```
 
@@ -93,7 +93,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## Snapshots
+## Website Screenshots
 
 ## Front Page
 
