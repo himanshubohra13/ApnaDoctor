@@ -1,8 +1,13 @@
 from django.shortcuts import  render, redirect
+from django.http import HttpResponse
 from appointment.forms import NewUserForm
-from django.contrib.auth import login, logout, authenticate
-from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required , permission_required
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.views.generic import TemplateView , ListView
 from appointment.models import Doctor , Appointment
 
@@ -13,8 +18,9 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("/auth/login/")
-		messages.error(request, "Unsuccessful registration. Invalid information.")
+			return redirect("login/")
+		else:
+			messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="appointment/register.html", context={"register_form":form})
 
@@ -39,6 +45,28 @@ def login_request(request):
 
 
 def search(request):
+	if request.method == 'POST':
+		timeslot = request.POST['timeSlot']
+		doctorName = request.POST['doctorName']
+		doc = Doctor.objects.get(name = doctorName)
+		docEmail = doc.email
+
+		userName = request.user
+		current_user = User.objects.get(username = userName)
+		userMail = current_user.email
+
+		meetId = doc.appointment_set.all()[0]
+
+		subject = 'Request for Appointment'
+		message = f'Patient Name: {userName} \nPatient Email Id: {userMail} \nDoctor Name: {doctorName} \nDoctor Mail Id: {docEmail} \nTime slot {timeslot} \nMeeting Id for video call: {meetId}' 
+		from_email = settings.EMAIL_HOST_USER
+		recipient_list = [docEmail , userMail]
+		status = send_mail(subject, message, from_email, recipient_list)
+		if status == 1:
+			return HttpResponse("done")
+		else:
+			return HttpResponse("")
+
 	doctors = Doctor.objects.all()[:5]
 	context = {
         "doctors" : doctors

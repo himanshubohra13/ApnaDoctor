@@ -1,83 +1,4 @@
-const DoctorData = [
-    {
-        name: 'Himanshu',
-        specialist: 'Eyes',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
 
-    },
-    {
-        name: 'Hemant',
-        specialist: 'psychiatrist',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
-
-    },
-    {
-        name: 'Gautam',
-        specialist: 'Neurologist',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
-
-    },
-    {
-        name: 'Aakansha',
-        specialist: 'Heart',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
-
-    },
-    {
-        name: 'Avni',
-        specialist: 'Ortho',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
-
-    },
-    {
-        name: 'Harshvardhan',
-        specialist: 'Gyno',
-        timeSlot: {
-            rightnow: false,
-            '10-11': true,
-            '11-12': true,
-            '12-1': true,
-            '2-3': true,
-            '3-4': true
-        },
-
-    }
-];
 const tableData = document.getElementById('tableBody');
 const doctorCity = document.getElementById('cityID');
 const Specalization = document.getElementById('inputGroupSelect03');
@@ -114,24 +35,14 @@ window.onload = () => {
 
 
 }
-searchButton.addEventListener('click', () => {
-    const toSend = new FormData();
-    toSend.append('city', doctorCity.value);
-    toSend.append('specalization', Specalization.value);
-    axios.post("", toSend, {
-        headers: {
-            "Content-Type": "multipart/form-data",
-            "X-CSRFToken": getCookie("csrftoken"),
-        },
-    })
 
-})
 function btnenable(event) {
     event.target.parentElement.parentElement.nextElementSibling.children[0].classList.remove('disabled');
 }
 function book(event) {
+    const formdata = new FormData();
     let tabData = event.target.parentElement.parentElement.querySelectorAll('td');
-    const datatoappend = ['Doctor Name: ', 'Specalist: ', 'Time Slot: '];
+    const datatoappend = ['Doctor Name: ', 'Specialist: ', 'Time Slot: '];
     console.log(tabData[2].children[0].querySelectorAll("input:checked")[0].value);
     const modalBody = document.getElementById('modalBody').querySelectorAll('p');
     console.log();
@@ -170,20 +81,39 @@ function book(event) {
         document.getElementById('modalBody').querySelectorAll('p').forEach((element, index) => {
             if (index == 2) {
                 element.textContent = datatoappend[index] + tabData[index].children[0].querySelectorAll("input:checked")[0].value;
+                formdata.append('timeSlot', tabData[index].children[0].querySelectorAll("input:checked")[0].value)
+                console.log(tabData[index].children[0].querySelectorAll("input:checked")[0].value);
             }
-            else
+            else {
+                if (index == 0) {
+                    console.log(tabData[index].textContent.trim())
+                    formdata.append('doctorName', tabData[index].textContent.trim())
+
+                }
                 element.textContent = datatoappend[index] + tabData[index].textContent;
+            }
 
         })
         let conbtn = document.getElementById('modalconfirm');
         conbtn.addEventListener('click', () => {
-            document.getElementById('modalcross').click();
-            document.getElementById('meetingconfirm').click();
+            axios.post('', formdata, {
+                headers: {
+                    "Content-Type": 'multipart/form-data',
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            }).then((response) => {
+                document.getElementById('modalcross').click();
+                document.getElementById('meetingconfirm').click();
+            })
+                .then((error) => {
+                    console.log(error);
+                })
         })
     }
 
 
 }
+
 function videoCall() {
     callFrame = window.DailyIframe.createFrame({
         iframeStyle: {
@@ -202,6 +132,7 @@ function videoCall() {
         url: "https://apnacheckup.daily.co/SVBqZbAE0tM8BaU9J4at",
     });
     callFrame.on('left-meeting', (event) => {
+        console.log(event);
         document.getElementById('aftermeetingModal').click();
         document.getElementById('videobtn').classList.add('d-none')
 

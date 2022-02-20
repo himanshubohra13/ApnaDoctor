@@ -28,7 +28,4 @@ urlpatterns = [
     path('liver-prediction/' , views.liverPred , name = 'liver-predict'),
 
     path('malaria/' , views.malariaPred , name = 'malaria-predict'),
-
-    path('stroke/' , views.stroke , name = 'stroke-view'),
-    path('stroke-prediction/' , views.strokePred , name = 'stroke-predict'),
 ]

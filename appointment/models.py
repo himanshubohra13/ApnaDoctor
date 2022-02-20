@@ -20,6 +20,7 @@ class Doctor(models.Model):
         ('Physical Therapy', 'Physical Therapy'),
     )
     name = models.CharField(max_length=256)
+    email = models.EmailField(null=True)
     qualification = models.CharField(max_length=256)
     specialization = models.CharField(choices=department, max_length=100)
     hospitalName = models.CharField(max_length=150)
@@ -41,7 +42,7 @@ class Timeslots(models.Model):
 
 class Appointment(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE)
-    meetingId = models.CharField(max_length=50)
+    meetingId = models.CharField(max_length=250)
     doctor = models.ForeignKey('Doctor' , on_delete=models.CASCADE , null=True)
     slot = models.ForeignKey('Timeslots' , on_delete=models.CASCADE)
 

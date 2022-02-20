@@ -13,8 +13,10 @@
     <script src="https://kit.fontawesome.com/b8f054bdd1.js" crossorigin="anonymous"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'front/medical-checkup.png' %}" type="image/png">
 
-    <title> Apna CheckUp </title>
+    <title> Apna Doctor </title>
 
     <style>
         #bg-image{
@@ -60,15 +62,13 @@
             <li><a href="{% url 'liver-view' %}">Liver Disease</a></li>
             <li class="divider"></li>
             <li><a href="{% url 'malaria-predict' %}">Malaria</a></li>
-            <li class="divider"></li>
-            <li><a href="{% url 'stroke-view' %}">Stroke Prediction</a></li> 
         </ul>
 
         <div class="navbar-fixed">
           <nav>
             <div class="nav-wrapper blue darken-2">
                 <div class="container">
-                    <a href="" class="brand-logo"> Apna CheckUp</a>
+                    <a href="" class="brand-logo"> Apna Doctor </a>
                     <a href="" class="sidenav-trigger" data-target="mobile-links">
                         <i class="material-icons">menu</i>
                     </a>
@@ -135,7 +135,7 @@
                           <span class="card-title"> BRAIN TUMOR DETECTION </span>
                       </div>
                       <div class="card-action">
-                        <a href="{% url 'brain-tumor-predict' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a href="{% url 'brain-tumor-predict' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                         <span class="card-title"> BMI CALCULATOR </span>
                     </div>
                     <div class="card-action">
-                      <a href="{% url 'bmi-calculator' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                      <a href="{% url 'bmi-calculator' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@
                           <span class="card-title"> COVID-19 PREDICTION </span>
                       </div>
                       <div class="card-action">
-                        <a href="{% url 'covid-predict' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a href="{% url 'covid-predict' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
                           <span class="card-title"> DIABETES PREDICTION </span>
                       </div>
                       <div class="card-action">
-                        <a href="{% url 'diabetes-view' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a href="{% url 'diabetes-view' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                         <span class="card-title"> GLAUCOMA PREDICTION </span>
                     </div>
                     <div class="card-action">
-                      <a href="{% url 'glaucoma-predict' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                      <a href="{% url 'glaucoma-predict' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                     </div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@
                           <span class="card-title"> HEART DISEASE PREDICTION</span>
                       </div>
                       <div class="card-action">
-                        <a href="{% url 'heart-disease-view' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a href="{% url 'heart-disease-view' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                           <span class="card-title"> KIDNEY TUMOR DETECTION </span>
                       </div>
                       <div class="card-action">
-                        <a href="" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a class="btn light-blue darken-4 tooltipped" data-position="right" data-tooltip="Yet to be implemented"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                         <span class="card-title"> LIVER DISEASE PREDICTION </span>
                     </div>
                     <div class="card-action">
-                      <a href="{% url 'liver-view' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                      <a href="{% url 'liver-view' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                     </div>
                   </div>
                 </div>
@@ -253,24 +253,11 @@
                           <span class="card-title"> MALARIA DISEASE PREDICTION </span>
                       </div>
                       <div class="card-action">
-                        <a href="{% url 'malaria-predict' %}" class="btn  light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
+                        <a href="{% url 'malaria-predict' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
                       </div>
                     </div>
                 </div>
     
-                <div class="col s12 m4 push-m1">
-                    <div class="card hoverable">
-                      <div class="card-image">
-                        <img src="{% static 'front/strokeD.jpg' %}" alt="" class="responsive-img">
-                      </div>
-                      <div class="card-content">
-                          <span class="card-title"> STROKE PREDICTION </span>
-                      </div>
-                      <div class="card-action">
-                        <a href="{% url 'stroke-view' %}" class="btn light-blue darken-4"> Take Test <span> <i class="material-icons right"> send </i> </span> </a>
-                      </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -302,6 +289,7 @@
         $(document).ready(function(){ 
             $('.dropdown-trigger').dropdown();
             $('.sidenav').sidenav();
+            $('.tooltipped').tooltip();
         });
     </script>
 </body>

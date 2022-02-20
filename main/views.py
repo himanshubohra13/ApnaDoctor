@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.http import HttpResponse , HttpResponseRedirect , JsonResponse , FileResponse
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from models.classifiers import (predict_malaria, predict_strokeD, predict_liverD, predict_heartD, predict_alzheimer, 
+from models.classifiers import (predict_malaria, predict_liverD, predict_heartD, predict_alzheimer, 
 predict_diabetes, predict_cancerB, predict_glaucoma, predict_covid, predict_brain, localizeTumor, predict_disease)
 from models.transcribe import get_text
 import os
@@ -22,22 +22,6 @@ def front(request):
 
 def bmiCalc(request):
     return render(request , 'bmi/bmi-calculator.html')
-
-def stroke(request):
-    return render(request , 'stroke/index.html')
-
-def strokePred(request):
-    if request.method == 'POST':
-        features = list(request.POST.dict().values())[1:]
-        features = list(map(float , features))
-        pred = predict_strokeD(np.array([features]))
-        context = {
-            'pred':pred
-        }
-        return render(request , 'stroke/output.html' , context)
-    
-    else:
-        redirect('stroke/')
 
 def heart(request):
     return render(request , 'heart/index.html')
