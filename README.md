@@ -15,6 +15,9 @@ The application mainly consists of three features:
 - Secondly, there is a feature to enter the symptoms (either simply type the symptoms or record the audio in browser) they are experiencing and the patients will get to know what possible diseases they might have along with the precautions that they must take.
 - Third feature is the doctor appointment system wherein patients can not only search doctors based on region or specialization, but also connect virtually with the doctors around the globe.
 
+## Presentation Link
+[ProtoType Presentation](https://docs.google.com/presentation/d/1Yy2IzPe3894Crcql7FBB99q8OBGlLuki/edit?usp=sharing&ouid=116808570776040602215&rtpof=true&sd=true)
+
 ## Getting Started
 
 **Step 1. Clone the repository into a new folder and then switch to code directory**
@@ -24,13 +27,13 @@ git clone https://github.com/himanshubohra13/ApnaDoctor
 cd ApnaDoctor
 ```
 
-**Step 2. Create a Virtual Environment and install Dependencies.**
+**Step 2. Create a Virtual Environment to install dependencies.**
 
 ```
 pip install virtualenv
 ```
 
-Create a new Virtual Environment for the project and activate it.
+Create a new Virtual Environment for the project and activate the environment to install the libraries.
 
 ```
 virtualenv env
@@ -47,7 +50,7 @@ pip install -r requirements.txt
 
 **Step3 . Download the trained models and include them in the models directory of the application.**
 
-The trained deep learning models can be downloaded from [here].
+The trained deep learning models can be downloaded from [here](https://drive.google.com/drive/folders/1uZqHsfRNjYJ005cLulFSkRJvQoXcgjbY?usp=sharing).
 
 **Step 4. Set up Amazon Transcribe API for speech to text conversion**
 
@@ -86,3 +89,4 @@ python manage.py runserver
 ```
 
 ## Snapshots
+![front](website-screenshots/FrontPage.png)
