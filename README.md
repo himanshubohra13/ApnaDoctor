@@ -113,7 +113,7 @@ python manage.py runserver
 
 ## Know Your Disease
 
-![Know Your Disease](website-screenshots/KYDpage.png)
+![Know Your Disease](website-screenshots/KYD Page.png)
 
 ## Know Your Disease Symptom
 
