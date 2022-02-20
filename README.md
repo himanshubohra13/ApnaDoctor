@@ -15,7 +15,12 @@ The application mainly consists of three features:
 - Secondly, there is a feature to enter the symptoms (either simply type the symptoms or record the audio in browser) they are experiencing and the patients will get to know what possible diseases they might have along with the precautions that they must take.
 - Third feature is the doctor appointment system wherein patients can not only search doctors based on region or specialization, but also connect virtually with the doctors around the globe.
 
+## Video Link of Working Model
+
+[Project Demonstration](https://youtu.be/zVQY9ugdZAs)
+
 ## Presentation Link
+
 [ProtoType Presentation](https://docs.google.com/presentation/d/1Yy2IzPe3894Crcql7FBB99q8OBGlLuki/edit?usp=sharing&ouid=116808570776040602215&rtpof=true&sd=true)
 
 ## Getting Started
@@ -89,4 +94,27 @@ python manage.py runserver
 ```
 
 ## Snapshots
+
+## Front Page
+
 ![front](website-screenshots/FrontPage.png)
+
+## Covid Prediction
+
+![Covid Prediction](website-screenshots/Covid.png)
+
+## Liver Form
+
+![Liver Form](website-screenshots/Liver.png)
+
+## Liver Form Result
+
+![Liver Form Result](website-screenshots/LiverRes.png)
+
+## Know Your Disease
+
+![Know Your Disease](website-screenshots/KYDpage.png)
+
+## Know Your Disease Symptom
+
+![Know Your Disease Symptom](website-screenshots/KYDSym.png)
