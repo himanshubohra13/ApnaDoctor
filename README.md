@@ -135,15 +135,15 @@ python manage.py runserver
 
 ![Login Page](website-screenshots/Login.png)
 
-## Top 5 Doctors add to Database
+## Display of Doctors Database
 
 ![Top 5 Doctors add to Database](website-screenshots/top5doct.png)
 
-## Filtered Doctor
+## Filtered Doctors list based on region/specialization
 
 ![Filtered Doctor](website-screenshots/Filtereddoc.png)
 
-## Booking Time Slot
+## Time Slots for Booking
 
 ![Booking Time Slot](website-screenshots/Booking.png)
 
