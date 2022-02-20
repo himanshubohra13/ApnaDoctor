@@ -141,7 +141,7 @@ python manage.py runserver
 
 ## Filtered Doctor
 
-![Filtered Doctor](website-screenshots/top5doct.png)
+![Filtered Doctor](website-screenshots/filtereddoc.png)
 
 ## Booking Time Slot
 
