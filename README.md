@@ -118,3 +118,39 @@ python manage.py runserver
 ## Know Your Disease Symptom
 
 ![Know Your Disease Symptom](website-screenshots/KYDSym.png)
+
+## Know Your Disease Audio
+
+![Know Your Disease Audio](website-screenshots/KYDAudio.png)
+
+## Know Your Disease Symptom
+
+![Know Your Disease Symptom](website-screenshots/KYDAudio.png)
+
+## Registeration Page
+
+![Registeration](website-screenshots/Register.png)
+
+## Login Page
+
+![Login Page](website-screenshots/Login.png)
+
+## Top 5 Doctors add to Database
+
+![Top 5 Doctors add to Database](website-screenshots/top5doct.png)
+
+## Filtered Doctor
+
+![Filtered Doctor](website-screenshots/top5doct.png)
+
+## Booking Time Slot
+
+![Booking Time Slot](website-screenshots/Booking.png)
+
+## Confirmation Mail
+
+![Confirmation Mail](website-screenshots/Confmail.png)
+
+## Video Call
+
+![Video Call](website-screenshots/Videocall.png)
