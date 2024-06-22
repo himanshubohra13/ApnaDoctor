@@ -25,11 +25,11 @@ The third feature is the doctor appointment system wherein patients can not only
 
 ## Getting Started
 
-**Step 1. Clone the repository into a new folder and then switch to code directory**
+**Step 1. Clone the repository into a new folder and then switch to the code directory**
 
 ```
-git clone https://github.com/himanshubohra13/ApnaDoctor.git
-cd ApnaDoctor
+git clone https://github.com/himanshubohra13/Health-Checkup.git
+cd Health-Checkup
 ```
 
 **Step 2. Create a Virtual Environment to install dependencies.**
