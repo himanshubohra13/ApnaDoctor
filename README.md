@@ -1,19 +1,19 @@
-# Project Name: Apna Doctor
+# Project Name: Health Checkup
 
 ## Theme : HealthCare
 
 ## Motivation
 
-- It has now become unsafe to go to the hospital every time we feel unwell, since there is a risk of getting affected by COVID-19. We believe that everyone should have easy access to great health care. Thus, there is a need to connect patients virtually with doctors.
-- So, our project aims to not only effectively connect doctors and patients virtually but incase if a patient recognises the symptoms, then he/she can know what disease he/she is likely to be infected with and what precautionary measures can be taken.
+- It has now become unsafe to go to the hospital every time we feel unwell since there is a risk of getting affected by COVID-19. We believe that everyone should have easy access to great health care. Thus, there is a need to connect patients virtually with doctors.
+- So, our project aims to not only effectively connect doctors and patients virtually but also if a patient recognizes the symptoms, then he/she can know what disease he/she is likely to be infected with and what precautionary measures can be taken.
 
 ## Objective
 
 The application mainly consists of three features:
 
-- First, we have designed a computer-aided diagnosis system (or disease prediction system) where users can get to know whether they are infected with a particular disease or not using machine/deep learning. For this, they are required to enter their medical details on the form or upload X-Ray/MRI image.
-- Secondly, there is a feature to enter the symptoms (either simply type the symptoms or record the audio in browser) they are experiencing and the patients will get to know what possible diseases they might have along with the precautions that they must take.
-- Third feature is the doctor appointment system wherein patients can not only search doctors based on region or specialization, but also connect virtually with the doctors around the globe.
+- First, we have designed a computer-aided diagnosis system (or disease prediction system) where users can get to know whether they are infected with a particular disease or not using machine/deep learning. For this, they are required to enter their medical details on the form or upload an X-ray/MRI image.
+- Secondly, there is a feature to enter the symptoms (either simply type the symptoms or record the audio in the browser) they are experiencing and the patients will get to know what possible diseases they might have along with the precautions that they must take.
+The third feature is the doctor appointment system wherein patients can not only search for doctors based on region or specialization but also connect virtually with doctors around the globe.
 
 ## Video Link of Working Model
 
